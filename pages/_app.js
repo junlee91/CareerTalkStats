@@ -38,17 +38,17 @@ class MyApp extends App {
             <div className="logo" />
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
               <Menu.Item key="1" onClick={() => this.onNavChange(1)}>
-                <Icon type="pie-chart" />
-                <span>Option 1</span>
+                <Icon type="home" />
+                <span>Home</span>
               </Menu.Item>
               <Menu.Item key="2" onClick={() => this.onNavChange(2)}>
-                <Icon type="desktop" />
-                <span>Option 2</span>
+                <Icon type="pie-chart" />
+                <span>Stats</span>
               </Menu.Item>
-              <Menu.Item key="9" onClick={() => this.onNavChange(3)}>
+              {/* <Menu.Item key="9" onClick={() => this.onNavChange(3)}>
                 <Icon type="file" />
                 <span>File</span>
-              </Menu.Item>
+              </Menu.Item> */}
             </Menu>
           </Sider>
 
