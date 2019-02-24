@@ -44,5 +44,6 @@ module.exports = {
     'arrow-parens': 0,
     'react/react-in-jsx-scope': 0,
     'no-restricted-globals': 0,
+    'jsx-a11y/anchor-is-valid': 0,
   }
 };

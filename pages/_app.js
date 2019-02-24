@@ -1,5 +1,6 @@
 import React from 'react';
 import App, { Container } from 'next/app';
+import Link from 'next/link';
 import { Layout, Menu, Icon } from 'antd';
 
 const { Content, Footer, Sider } = Layout;
@@ -15,17 +16,22 @@ class MyApp extends App {
     return { pageProps };
   }
 
-  state = {
-    collapsed: true,
-    pageSelection: 1
-  };
+  componentWillMount() {
+    const { router: { route } } = this.props;
+    let defaultKey = '1';
+
+    if (route === '/stats') {
+      defaultKey = '2';
+    }
+
+    this.setState({
+      collapsed: true,
+      defaultKey
+    });
+  }
 
   onCollapse = collapsed => {
     this.setState({ collapsed });
-  };
-
-  onNavChange = option => {
-    this.setState({ pageSelection: option });
   };
 
   render() {
@@ -36,19 +42,23 @@ class MyApp extends App {
         <Layout style={{ minHeight: '100vh' }}>
           <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
             <div className="logo" />
-            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-              <Menu.Item key="1" onClick={() => this.onNavChange(1)}>
-                <Icon type="home" />
-                <span>Home</span>
+            <Menu theme="dark" defaultSelectedKeys={[this.state.defaultKey]} mode="inline">
+              <Menu.Item key="1">
+                <Link href="/">
+                  <a>
+                    <Icon type="home" />
+                    <span>Home</span>
+                  </a>
+                </Link>
               </Menu.Item>
-              <Menu.Item key="2" onClick={() => this.onNavChange(2)}>
-                <Icon type="pie-chart" />
-                <span>Stats</span>
+              <Menu.Item key="2">
+                <Link href="/stats">
+                  <a>
+                    <Icon type="pie-chart" />
+                    <span>Stats</span>
+                  </a>
+                </Link>
               </Menu.Item>
-              {/* <Menu.Item key="9" onClick={() => this.onNavChange(3)}>
-                <Icon type="file" />
-                <span>File</span>
-              </Menu.Item> */}
             </Menu>
           </Sider>
 
