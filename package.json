@@ -9,6 +9,7 @@
     "antd": "^3.13.6",
     "express": "^4.16.4",
     "next": "^8.0.3",
+    "next-nprogress": "^1.4.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
   },
@@ -24,5 +25,8 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.0"
+  },
+  "resolutions": {
+    "styled-jsx": "3.0.0"
   }
 }

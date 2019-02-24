@@ -2,6 +2,8 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import Link from 'next/link';
 import { Layout, Menu, Icon } from 'antd';
+import NProgress from 'next-nprogress/component';
+import withNProgress from 'next-nprogress';
 
 const { Content, Footer, Sider } = Layout;
 
@@ -39,6 +41,7 @@ class MyApp extends App {
 
     return (
       <Container>
+        <NProgress color="#29d" spinner />
         <Layout style={{ minHeight: '100vh' }}>
           <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
             <div className="logo" />
@@ -84,4 +87,6 @@ class MyApp extends App {
   }
 }
 
-export default MyApp;
+const msDelay = 200;
+const options = { trickleSpeed: 50 };
+export default withNProgress(msDelay, options)(MyApp);
