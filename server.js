@@ -1,13 +1,14 @@
 // NextJS Server
-const express = require("express");
-const next = require("next");
+const express = require('express');
+const next = require('next');
 
-const { resolve } = require("path");
-const dev = process.env.NODE_ENV !== "production";
+const { resolve } = require('path');
+
+const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-let PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app
   .prepare()
@@ -15,11 +16,11 @@ app
     const server = express();
 
     // register service worker
-    server.get("/sw.js", (req, res) => {
-      app.serveStatic(req, res, resolve("./static/service-worker.js"));
+    server.get('/sw.js', (req, res) => {
+      app.serveStatic(req, res, resolve('./static/service-worker.js'));
     });
 
-    server.get("*", (req, res) => {
+    server.get('*', (req, res) => {
       return handle(req, res);
     });
 

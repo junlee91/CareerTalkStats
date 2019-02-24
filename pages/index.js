@@ -1,5 +1,5 @@
-import Head from "next/head";
-import { Layout, Menu, Icon } from "antd";
+import Head from 'next/head';
+import { Layout, Menu, Icon } from 'antd';
 
 const { Content, Footer, Sider } = Layout;
 
@@ -23,14 +23,10 @@ class LayoutComponent extends React.Component {
 
   render() {
     return (
-      <Layout style={{ minHeight: "100vh" }}>
-        <Sider
-          collapsible
-          collapsed={this.state.collapsed}
-          onCollapse={this.onCollapse}
-        >
+      <Layout style={{ minHeight: '100vh' }}>
+        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
+          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
               <Icon type="pie-chart" />
               <span>Option 1</span>
@@ -47,22 +43,20 @@ class LayoutComponent extends React.Component {
         </Sider>
 
         <Layout>
-          <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
+          <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
             <div
               style={{
                 padding: 24,
-                background: "#fff",
-                textAlign: "center",
-                minHeight: "80vh"
+                background: '#fff',
+                textAlign: 'center',
+                minHeight: '80vh'
               }}
             >
               content
             </div>
           </Content>
 
-          <Footer style={{ textAlign: "center" }}>
-            Ant Design ©2018 Created by Ant UED
-          </Footer>
+          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
         </Layout>
       </Layout>
     );
