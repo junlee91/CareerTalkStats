@@ -16,7 +16,8 @@
   "scripts": {
     "dev": "node server",
     "build": "next build",
-    "start": "NODE_ENV=production node server"
+    "start": "NODE_ENV=production node server",
+    "heroku-postbuild": "next build"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
