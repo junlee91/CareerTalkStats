@@ -7,10 +7,12 @@
   "license": "MIT",
   "dependencies": {
     "antd": "^3.13.6",
+    "chart.js": "^2.7.3",
     "express": "^4.16.4",
     "next": "^8.0.3",
     "next-nprogress": "^1.4.0",
     "react": "^16.8.3",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.8.3"
   },
   "scripts": {
