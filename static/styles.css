@@ -3,7 +3,14 @@ body {
 }
 
 .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
   margin: 16px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-image {
+  object-fit: contain;
 }

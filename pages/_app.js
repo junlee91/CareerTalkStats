@@ -44,7 +44,9 @@ class MyApp extends App {
         <NProgress color="#29d" spinner />
         <Layout style={{ minHeight: '100vh' }}>
           <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-            <div className="logo" />
+            <div className="logo">
+              <img className="logo-image" src="/static/images/logo_transparent.png" alt="" />
+            </div>
             <Menu theme="dark" defaultSelectedKeys={[this.state.defaultKey]} mode="inline">
               <Menu.Item key="1">
                 <Link href="/">
