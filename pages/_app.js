@@ -5,7 +5,7 @@ import { Layout, Menu, Icon } from 'antd';
 import NProgress from 'next-nprogress/component';
 import withNProgress from 'next-nprogress';
 
-const { Content, Footer, Sider } = Layout;
+const { Header, Content, Footer } = Layout;
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -19,7 +19,9 @@ class MyApp extends App {
   }
 
   componentWillMount() {
-    const { router: { route } } = this.props;
+    const {
+      router: { route }
+    } = this.props;
     let defaultKey = '1';
 
     if (route === '/stats') {
@@ -42,12 +44,17 @@ class MyApp extends App {
     return (
       <Container>
         <NProgress color="#29d" spinner />
-        <Layout style={{ minHeight: '100vh' }}>
-          <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
+        <Layout>
+          <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
             <div className="logo">
               <img className="logo-image" src="/static/images/logo_transparent.png" alt="" />
             </div>
-            <Menu theme="dark" defaultSelectedKeys={[this.state.defaultKey]} mode="inline">
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              defaultSelectedKeys={[this.state.defaultKey]}
+              style={{ lineHeight: '64px' }}
+            >
               <Menu.Item key="1">
                 <Link href="/">
                   <a>
@@ -65,24 +72,11 @@ class MyApp extends App {
                 </Link>
               </Menu.Item>
             </Menu>
-          </Sider>
-
-          <Layout>
-            <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-              <div
-                style={{
-                  padding: 24,
-                  background: '#fff',
-                  textAlign: 'center',
-                  minHeight: '80vh'
-                }}
-              >
-                <Component {...pageProps} {...this.state} />
-              </div>
-            </Content>
-
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-          </Layout>
+          </Header>
+          <Content style={{ padding: '0 50px', marginTop: 64, minHeight: '80vh' }}>
+            <Component {...pageProps} {...this.state} />
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
         </Layout>
       </Container>
     );
