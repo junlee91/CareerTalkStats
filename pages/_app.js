@@ -73,7 +73,7 @@ class MyApp extends App {
               </Menu.Item>
             </Menu>
           </Header>
-          <Content style={{ padding: '0 20px', marginTop: 64, minHeight: '80vh' }}>
+          <Content style={{ padding: '0 10px', marginTop: 64, minHeight: '80vh' }}>
             <Component {...pageProps} {...this.state} />
           </Content>
           <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
