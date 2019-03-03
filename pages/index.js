@@ -23,7 +23,7 @@ export default () => (
     <style jsx>
       {`
         .home-content {
-          padding: 10px 60px;
+          padding: 30px 60px;
         }
 
         .content {
