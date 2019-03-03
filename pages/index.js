@@ -16,7 +16,7 @@ export default () => (
           <img src="/static/images/google_play.png" alt="Google Play" />
         </a>
         <a href="https://itunes.apple.com/us/app/careertalk-find-your-jobs/id1435448112" target="_">
-          <img src="/static/images/app_store.png" alt="Google Play" />
+          <img src="/static/images/app_store.png" alt="App Store" />
         </a>
       </div>
     </div>
