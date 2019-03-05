@@ -26,6 +26,8 @@ class MyApp extends App {
 
     if (route === '/stats') {
       defaultKey = '2';
+    } else if (route === '/top_list') {
+      defaultKey = '3';
     }
 
     this.setState({
@@ -68,6 +70,14 @@ class MyApp extends App {
                   <a>
                     <Icon type="pie-chart" />
                     <span>Stats</span>
+                  </a>
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="3">
+                <Link href="/top_list">
+                  <a>
+                    <Icon type="trophy" />
+                    <span>Top List</span>
                   </a>
                 </Link>
               </Menu.Item>
